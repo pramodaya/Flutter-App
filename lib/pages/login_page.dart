@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Login"),
+      appBar: const CustomAppBar(title: "Login"),
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();

@@ -12,16 +12,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeManager.lightTheme,
-      initialRoute: '/login', // Specify the initial route
+      initialRoute: '/login',
       routes: {
-        '/login': (context) => LoginPage(),
-        '/home': (context) => HomePage(),
-        '/signup': (context) => SignUpPage(),
+        '/login': (context) => const SafeAreaWrapper(child: LoginPage()),
+        '/home': (context) => SafeAreaWrapper(child: HomePage()),
+        '/signup': (context) => const SafeAreaWrapper(child: SignUpPage()),
       },
       home: const Scaffold(
-        body: LoginPage(),
+        body: SafeAreaWrapper(child: LoginPage()),
       ),
+    );
+  }
+}
+
+class SafeAreaWrapper extends StatelessWidget {
+  final Widget child;
+
+  const SafeAreaWrapper({Key? key, required this.child}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: child,
     );
   }
 }

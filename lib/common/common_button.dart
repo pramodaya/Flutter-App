@@ -21,7 +21,8 @@ class CommonButton extends StatelessWidget {
 }
 
 final ButtonStyle commonButtonStyle = ElevatedButton.styleFrom(
-  foregroundColor: Colors.white, backgroundColor: Colors.purple,
+  foregroundColor: Colors.white,
+  backgroundColor: Colors.purple,
   padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(8.0),
